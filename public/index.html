@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cinéfilo · Catálogo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <span class="logo">🎬</span>
+        <strong>Cinéfilos</strong>
+      </div>
+      <div class="actions">
+        <input id="search" type="search" placeholder="Buscar películas…" aria-label="Buscar" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero minimal -->
+  <section class="hero-minimal">
+    <div class="container hero__content">
+      <h1>Cine para todos</h1>
+      <p>Explorador de películas. Filtra y ordena a tu gusto.</p>
+      <div class="hero__tags">
+        <span class="tag">🎟️ Estrenos</span>
+        <span class="tag">⭐ Top IMDb</span>
+        <span class="tag">🍿 Para ver hoy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="filters">
+    <div class="container filters__content">
+      <div class="filters__group">
+        <label for="genre">Género</label>
+        <select id="genre">
+          <option value="">Todos</option>
+          <option value="28">Acción</option>
+          <option value="18">Drama</option>
+          <option value="35">Comedia</option>
+          <option value="27">Terror</option>
+          <option value="10749">Romance</option>
+        </select>
+      </div>
+
+      <div class="filters__group">
+        <label for="sort">Ordenar</label>
+        <select id="sort">
+          <option value="popular">Popularidad</option>
+          <option value="rating">Puntuación</option>
+          <option value="year_desc">Año (desc)</option>
+          <option value="year_asc">Año (asc)</option>
+        </select>
+      </div>
+
+      <!-- <button class="btn-apply" disabled title="Añade tu JS para aplicar">Aplicar</button> -->
+    </div>
+  </section>
+
+  <!-- Catálogo único -->
+  <main class="container">
+    <header class="catalog__header">
+      <h2 id="catalog-title">Populares</h2>
+      <span id="status" class="catalog__hint" aria-live="polite">12 resultados</span>
+    </header>
+
+    <ul id="grid" class="catalog__grid">
+      <!-- 12 tarjetas de ejemplo; tu JS las reemplazará -->
+      <li class="card">
+        <img src="https://via.placeholder.com/300x450?text=Poster" alt="Póster">
+        <div class="card__meta">
+          <h3>Título de película</h3>
+          <p>2025 · ★ 7.8</p>
+        </div>
+      </li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2024 · ★ 7.1</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2023 · ★ 6.9</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2022 · ★ 8.0</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2021 · ★ 7.3</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2020 · ★ 7.5</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2019 · ★ 7.9</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2018 · ★ 7.0</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2017 · ★ 6.8</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2016 · ★ 8.1</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2015 · ★ 7.2</p></div></li>
+      <li class="card"><img src="https://via.placeholder.com/300x450?text=Poster" alt=""><div class="card__meta"><h3>Título</h3><p>2014 · ★ 7.4</p></div></li>
+    </ul>
+
+    <div class="actions-center">
+      <button class="btn-more" disabled title="Añade tu JS para paginar">Cargar más</button>
+    </div>
+  </main>
+
+  <footer class="container footer">
+    <small>© 2025 Cinéfilo — Demo UI - Alexis Marcos</small>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+:root{
+  --bg:#0b0f14;
+  --bg-soft:#0f141b;
+  --text:#e6e8eb;
+  --muted:#9aa4af;
+  --accent:#f6c90e;
+  --accent-2:#ffd84d;
+  --border:#1c2430;
+  --radius:16px;
+  --gap:1rem;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:
+    radial-gradient(1000px 600px at 20% -10%, #16202d 0%, transparent 60%),
+    radial-gradient(800px 400px at 90% 0%, #1c2736 0%, transparent 55%),
+    var(--bg);
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height:1.45;
+}
+
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+
+/* Topbar */
+.topbar{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter: blur(6px);
+  background: color-mix(in srgb, var(--bg-soft) 70%, transparent);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  display:grid; grid-template-columns: 200px 1fr; gap:var(--gap); align-items:center; height:64px;
+}
+.brand{display:flex; gap:.6rem; align-items:center; font-size:1.1rem}
+.logo{font-size:1.3rem}
+.actions{display:flex; justify-content:flex-end}
+.actions input[type="search"]{
+  width:100%; max-width:280px;
+  background:#0a0f16; border:1px solid var(--border); color:var(--text);
+  border-radius:12px; padding:.55rem .8rem;
+}
+.actions input::placeholder{color:#718093}
+
+/* Hero minimalista */
+.hero-minimal{
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg) 80%);
+  border-bottom:1px solid var(--border);
+}
+.hero__content{padding:3.2rem 0 2.4rem; text-align:center}
+.hero-minimal h1{
+  font-size:clamp(1.8rem,3vw,3rem); margin:0 0 .6rem; font-weight:800; letter-spacing:.2px
+}
+.hero-minimal p{color:var(--muted); margin:0 0 1.2rem}
+.hero__tags{display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap}
+.tag{
+  font-weight:600; color:#111;
+  background:linear-gradient(180deg, var(--accent), var(--accent-2));
+  padding:.35rem .6rem; border-radius:999px; box-shadow:0 2px 12px rgba(246,201,14,.25)
+}
+
+/* Filtros */
+.filters{
+  background: linear-gradient(180deg, var(--bg-soft), transparent);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.filters__content{
+  display:flex; gap:1rem; align-items:flex-end; padding:1rem 0;
+}
+.filters__group{display:flex; flex-direction:column; gap:.35rem}
+.filters label{color:var(--muted); font-size:.9rem}
+.filters select{
+  background:#0a0f16; color:var(--text); border:1px solid var(--border);
+  border-radius:10px; padding:.5rem .7rem; min-width:160px;
+}
+.btn-apply{
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color:#111; border:0; border-radius:12px; padding:.55rem .9rem; font-weight:700;
+  box-shadow:0 8px 18px rgba(246,201,14,.25);
+}
+.btn-apply[disabled]{opacity:.6; filter:grayscale(20%); cursor:default}
+
+/* Cabecera de catálogo */
+.catalog__header{
+  display:flex; justify-content:space-between; align-items:baseline; margin:1.2rem 0 .6rem;
+}
+.catalog__hint{color:var(--muted)}
+
+/* Grid único */
+.catalog__grid{
+  list-style:none; padding:0; margin:0;
+  display:grid; gap:1rem;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+/* Tarjetas */
+.card{
+  background:linear-gradient(180deg, #121a26, #0f151f);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  overflow:hidden;
+  transform: translateZ(0);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{transform: translateY(-4px); border-color:#2a3a51}
+.card img{
+  width:100%; aspect-ratio:2/3; object-fit:cover; display:block;
+  filter: saturate(1.02) contrast(1.05);
+}
+.card__meta{padding:.7rem}
+.card__meta h3{margin:0 0 .25rem; font-size:.98rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.card__meta p{margin:0; color:var(--muted); font-size:.9rem}
+
+/* Acciones */
+.actions-center{display:flex; justify-content:center; margin:1.2rem 0 2rem}
+.btn-more{
+  background:#0a0f16; color:var(--text); border:1px solid var(--border);
+  border-radius:12px; padding:.6rem 1rem; font-weight:700;
+}
+.btn-more[disabled]{opacity:.6}
+
+/* Footer */
+.footer{padding:2.5rem 0; color:var(--muted); text-align:center; border-top:1px solid var(--border)}
+
+/* Responsive */
+@media (max-width:900px){
+  .nav{grid-template-columns: 1fr; gap:.6rem; height:auto; padding:.6rem 0}
+  .actions{justify-content:flex-start}
+}
