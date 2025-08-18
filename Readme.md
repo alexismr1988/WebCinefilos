@@ -2,16 +2,22 @@
 
 Aplicación web que permite buscar y filtrar películas usando la API de [The Movie Database](https://www.themoviedb.org/).
 
-##  Estructura del proyecto
+## Funcionalidades implementadas
+- Obtención de películas populares desde la API de TMDB.
+- Transformación de los datos en objetos `Pelicula`.
+- Renderizado dinámico de tarjetas en el catálogo.
+- Límite inicial de resultados mostrados (18).
+
+## Estructura del proyecto
 - **public/** → Contiene el HTML y el CSS.
 - **src/** → Contendrá el código JavaScript.
 - **README.md** → Este archivo de documentación.
 
-##  Funcionalidades previstas
+## Próximos pasos
 - Búsqueda de películas por título.
 - Filtrado por género.
 - Ordenación por popularidad, puntuación o año.
-- Paginación para cargar más resultados.
+- Paginación con botón “Cargar más”.
 
 ## 🛠 Tecnologías
 - HTML5
@@ -19,6 +25,12 @@ Aplicación web que permite buscar y filtrar películas usando la API de [The Mo
 - JavaScript (ES6+)
 - Fetch API
 
-##  Estado
-Proyecto en desarrollo. Actualmente configurando estructura y primer fetch.
+## Estado
+Proyecto en desarrollo.  
+El catálogo ya muestra películas reales desde la API.
 
+---
+
+## 👨‍💻 Autor
+**Alexis Marcos**  
+[GitHub](https://github.com/tuusuario)
