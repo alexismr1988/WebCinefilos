@@ -1,4 +1,4 @@
-# Proyecto Catálogo de Películas
+# Proyecto Catálogo de Películas v0.2
 
 Aplicación web que permite buscar y filtrar películas usando la API de [The Movie Database](https://www.themoviedb.org/).
 
@@ -7,6 +7,8 @@ Aplicación web que permite buscar y filtrar películas usando la API de [The Mo
 - Transformación de los datos en objetos `Pelicula`.
 - Renderizado dinámico de tarjetas en el catálogo.
 - Límite inicial de resultados mostrados (18).
+- Filtrado por género.
+- Ordenación por popularidad, puntuación o año.
 
 ## Estructura del proyecto
 - **public/** → Contiene el HTML y el CSS.
@@ -15,8 +17,6 @@ Aplicación web que permite buscar y filtrar películas usando la API de [The Mo
 
 ## Próximos pasos
 - Búsqueda de películas por título.
-- Filtrado por género.
-- Ordenación por popularidad, puntuación o año.
 - Paginación con botón “Cargar más”.
 
 ## 🛠 Tecnologías
