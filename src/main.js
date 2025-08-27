@@ -1,4 +1,7 @@
 const grid = document.getElementById("grid");
+const selectGenero = document.getElementById("genre");
+const selectOrden = document.getElementById("sort");
+
 class Pelicula {
   constructor(title, release_date, vote_average, poster_path) {
     this.titulo = title;
@@ -12,10 +15,13 @@ class Pelicula {
 
 document.addEventListener("DOMContentLoaded", ()=>{
     cargarPeliculasPopulares();
+    selectGenero.addEventListener("change",cargarPeliculas);
+    selectOrden.addEventListener("change",cargarPeliculas);
 
 });
 
 function cargarPeliculasPopulares(){
+  
     const url="https://api.themoviedb.org/3/movie/popular?api_key=c2260838ab7a0b1f81b504de597aba9b&language=es-ES&page=1";
 
     fetch(url)
@@ -26,6 +32,21 @@ function cargarPeliculasPopulares(){
           const peliculasSeleccionadas = peliculas.slice(0,18);
           insertarPeliculas(peliculasSeleccionadas)
         })
+}
+
+function cargarPeliculas(){
+  const generoSeleccionado = document.querySelector("#genre").value;
+  const ordenSeleccionado = document.querySelector("#sort").value;
+  const url= `https://api.themoviedb.org/3/discover/movie?with_genres=${generoSeleccionado}&language=es-ES&sort_by=${ordenSeleccionado}&page=1&api_key=c2260838ab7a0b1f81b504de597aba9b&language=es-ES&page=1`;
+
+    fetch(url)
+      .then(respuesta=>respuesta.json()) //Convertimos a objeto JSON la respuesta que nos da
+      .then(datos => {
+        const peliculas = pasarDatosAPeliculas(datos);
+        console.log(peliculas);
+        const peliculasSeleccionadas = peliculas.slice(0,18);
+        insertarPeliculas(peliculasSeleccionadas)
+      })
 }
 
 function pasarDatosAPeliculas(datos){
